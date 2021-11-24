@@ -39,6 +39,7 @@ main(int an, char **as)
 	int cnt = 0;
 	double timer = 0.;
 	for (it = 1; it <= itmax; ++it) {
+		++cnt;
 		eps = 0.;
 		double bench_t_start = rtclock();
 		relax();
