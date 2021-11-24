@@ -33,20 +33,22 @@ rtclock()
 int main(int an, char **as)
 {
 	int it;
-    double bench_t_start = rtclock();
 	init();
-
+	int cnt = 0;
+	double timer = 0.;
 	for(it=1; it<=itmax; it++)
 	{
+		++cnt;
 		eps = 0.;
+		double bench_t_start = rtclock();
 		relax();
+		double bench_t_end = rtclock();
+		timer += bench_t_end - bench_t_start
 		//printf( "it=%4i   eps=%f\n", it,eps);
 		if (eps < maxeps) break;
 	}
-
+	printf ("Time in seconds = %0.6lf\n", timer / cnt);
 	verify();
-    double bench_t_end = rtclock();
-    printf ("Time in seconds = %0.6lf\n", bench_t_end - bench_t_start);
 
 	return 0;
 }
