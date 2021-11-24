@@ -43,7 +43,7 @@ int main(int an, char **as)
 		double bench_t_start = rtclock();
 		relax();
 		double bench_t_end = rtclock();
-		timer += bench_t_end - bench_t_start
+		timer += bench_t_end - bench_t_start;
 		//printf( "it=%4i   eps=%f\n", it,eps);
 		if (eps < maxeps) break;
 	}
